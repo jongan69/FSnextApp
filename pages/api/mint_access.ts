@@ -4,10 +4,12 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 // This depend on your HTTP Server setup. In this example, we're using next.js
 // api handlers.
+
 export default function mint(
   req: NextApiRequest,
   res: NextApiResponse
 ): Promise<any> {
+
   // the RPC URL to the blockchain that the NFT contract is deployed on.
   // "rinkeby" = rinkeby testnet,
   // "https://rpc-mumbai.maticvigil.com" = mumbai testnet.
@@ -43,6 +45,10 @@ export default function mint(
       .then((metadata) => {
         // Returning the NFT metadata to the client requested.
         // This depends on the HTTP server framework
+        const receipt = metadata.receipt; // the transaction receipt
+        const tokenId = metadata.id; // the id of the NFT minted
+        const nft1 = metadata.data(); // (optional) fetch details of minted NFT
+        console.log('MINTING DATA: ', receipt, tokenId, nft1)
         res.status(200).json(metadata);
         resolve();
       });

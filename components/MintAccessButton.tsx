@@ -7,6 +7,7 @@ export const MintAccessButton = () => {
   const [loading, setLoading] = useState(false);
   const toast = useToast();
   const address = useAddress();
+  
   const onMintHandler = async () => {
     toast({
       title: "Minting...",
@@ -15,6 +16,7 @@ export const MintAccessButton = () => {
       isClosable: true,
     });
     setLoading(true);
+
     // make a backend server api request to mint an NFT
     await fetch("/api/mint_access", {
       method: "POST",
@@ -28,7 +30,7 @@ export const MintAccessButton = () => {
       if (response.status === 200) {
         toast({
           title: "Success",
-          description: "Your sword has been minted",
+          description: "Your access has been minted",
           status: "success",
           duration: 9000,
           isClosable: true,
@@ -45,7 +47,7 @@ export const MintAccessButton = () => {
     });
   };
 
-  // render the button to mint a sword NFT
+  // render the button to mint an access NFT
   return address ? (
     <Button onClick={onMintHandler}>Mint Access</Button>
   ) : (
