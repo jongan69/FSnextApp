@@ -32,13 +32,13 @@ export default function mint(
     // get the wallet address that's sent in from the request body.
     const { address } = req.body;
 
-    // mint "My Sword" NFT to the wallet address that was requested.
+    // mint "Collectable" NFT to the wallet address that was requested.
     // note: async / await works too.
     nft
       .mintTo(address, {
-        name: "My Sword",
-        description: "My Sword NFT description",
-        image: "ipfs://QmcmfEV7X5LPfrAjUubw3wGV4toY9Mkb74XVhQJeKakp4Z",
+        name: "Collectable",
+        description: "Collectifi Mobile App NFT Pass",
+        image: "ipfs://QmazmFxTySFEP6fbQycZaqA4FwzLvR2cxvvUAaPwNNgH7z",
       })
       .then((metadata) => {
         // Returning the NFT metadata to the client requested.

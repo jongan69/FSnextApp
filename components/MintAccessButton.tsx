@@ -3,7 +3,7 @@ import { Button, useToast } from "@chakra-ui/react";
 import { useAddress } from "@thirdweb-dev/react";
 import { ConnectWalletButton } from "./ConnectWallet";
 
-export const MintSwordButton = () => {
+export const MintAccessButton = () => {
   const [loading, setLoading] = useState(false);
   const toast = useToast();
   const address = useAddress();
@@ -16,7 +16,7 @@ export const MintSwordButton = () => {
     });
     setLoading(true);
     // make a backend server api request to mint an NFT
-    await fetch("/api/mint_sword", {
+    await fetch("/api/mint_access", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -47,7 +47,7 @@ export const MintSwordButton = () => {
 
   // render the button to mint a sword NFT
   return address ? (
-    <Button onClick={onMintHandler}>Mint Sword NFT</Button>
+    <Button onClick={onMintHandler}>Mint Access</Button>
   ) : (
     <ConnectWalletButton />
   );

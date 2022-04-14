@@ -3,14 +3,14 @@ import { useAddress, useNFTCollection } from "@thirdweb-dev/react";
 import { NFTMetadataOwner } from "@thirdweb-dev/sdk";
 import React, { useEffect, useState } from "react";
 
-export const SwordList = () => {
+export const AccessList = () => {
   const address = useAddress();
   // React state for a list of nfts in the nft collection
   const [nfts, setNFTs] = useState([] as NFTMetadataOwner[]);
 
   // initialize the SDK and get the NFT Collection module
   // get the contract address (0x...) from your dashboard!
-  const nftCollectionAddress = "0xc134230F2e67a96B41DABFF7063530178d668601";
+  const nftCollectionAddress = "0x1D67324378B092020cCf26d61E6b2595B54cc027";
   const nftCollection = useNFTCollection(nftCollectionAddress);
   useEffect(() => {
     // get all the NFTs including the owner from the nft collection.
@@ -38,7 +38,7 @@ export const SwordList = () => {
           ))
         ) : (
           <>
-            <Text>No swords</Text>
+            <Text>No access</Text>
           </>
         )}
       </Stack>

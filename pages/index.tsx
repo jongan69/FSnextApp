@@ -9,8 +9,8 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { ConnectWalletButton } from "../components/ConnectWallet";
-import { MintSwordButton } from "../components/MintSwordButton";
-import { SwordList } from "../components/SwordList";
+import { MintAccessButton } from "../components/MintAccessButton";
+import { AccessList } from "../components/AccessList";
 import { Wallet } from "../components/Wallet";
 import React from "react";
 import { useAddress } from "@thirdweb-dev/react";
@@ -21,7 +21,7 @@ const HomePage: React.FC = () => {
   return (
     <Flex minH="100vh" flexDir="row" p={16}>
       <Box p={4}>
-        <Heading mb={8}>thirdweb SDK Example</Heading>
+        <Heading mb={8}>Collectifi App & API</Heading>
 
         <FormControl display="flex" mb={4}>
           <FormLabel htmlFor="darkMode" mb="0">
@@ -39,8 +39,8 @@ const HomePage: React.FC = () => {
             <Wallet />
 
             <Box mt={4}>
-              <Text>Get your own Gold Sword</Text>
-              <MintSwordButton />
+              <Text>Mint Access to the mobile app</Text>
+              <MintAccessButton />
             </Box>
 
             <Box mt={4}>
@@ -58,13 +58,13 @@ const HomePage: React.FC = () => {
       {address ? (
         <>
           <Box p={4}>
-            <Text fontWeight="bold">All swords in the module:</Text>
-            <SwordList />
+            <Text fontWeight="bold">All passes for Collectifi:</Text>
+            <AccessList />
           </Box>
 
           <Box p={4}>
-            <Text fontWeight="bold">Sword owned by me:</Text>
-            <SwordList />
+            <Text fontWeight="bold">All your Collectifi passes:</Text>
+            <AccessList />
           </Box>
         </>
       ) : null}
