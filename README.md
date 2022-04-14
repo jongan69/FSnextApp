@@ -1,6 +1,11 @@
-# Nextjs FS WebApp
+# Nextjs Full Stack WebApp
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+This was built using an example of how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+
+# Goals
+- Complete the Minting process
+- Create Custom NFT Smart contract for Authentication
+- Implement reading and Authentication using just a provided wallet address 
 
 ## Deploy your own
 
